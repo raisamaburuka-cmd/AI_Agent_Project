@@ -648,7 +648,10 @@ for message in st.session_state.messages:
 
 
 # Chat input
-audio_input = st.audio_input("")
+audio_input = st.audio_input(
+    "Microphone",
+    label_visibility="collapsed"
+)
 
 user_message = st.chat_input("Type your message or use the microphone...")
 
