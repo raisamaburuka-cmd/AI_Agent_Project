@@ -557,8 +557,8 @@ audio {
 /* 🌸 Position microphone beside the chat input */
 [data-testid="stAudioInput"] {
     position: fixed !important;
-    bottom: 66px !important;
-    left: calc(50% + 145px) !important;
+    left: calc(50% + 125px) !important;
+    bottom: 58px !important;
     z-index: 999 !important;
     background: transparent !important;
     border: none !important;
