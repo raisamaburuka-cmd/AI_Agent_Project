@@ -558,7 +558,7 @@ audio {
 [data-testid="stAudioInput"] {
     position: fixed !important;
     bottom: 66px !important;
-    left: 50% !important;
+    left: calc(50% - 250px) !important;
     z-index: 999 !important;
     background: transparent !important;
     border: none !important;
