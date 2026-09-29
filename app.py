@@ -181,7 +181,7 @@ p, label, .stMarkdown {
     background: #f7dce9 !important;
     border: 1px solid #e8bfd1 !important;
     border-radius: 20px 20px 5px 20px !important;
-    color: #493b43 !important;
+    color: #403744 !important;
 }
 
 /* 🪻 AGENT bubble */
@@ -189,7 +189,7 @@ p, label, .stMarkdown {
     background: #e9e1f0 !important;
     border: 1px solid #d4c5df !important;
     border-radius: 20px 20px 20px 5px !important;
-    color: #403744 !important;
+    color: #29242c !important;
 }
 
 /* Message text */
