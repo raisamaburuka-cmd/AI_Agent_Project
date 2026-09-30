@@ -199,6 +199,13 @@ p, label, .stMarkdown {
 [data-testid="stChatMessage"] strong,
 [data-testid="stChatMessage"] em {
     color: #29242c !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+    margin: 0 !important;
+}
+
+/* Message headings */
 [data-testid="stChatMessage"] h1,
 [data-testid="stChatMessage"] h2,
 [data-testid="stChatMessage"] h3,
@@ -206,11 +213,6 @@ p, label, .stMarkdown {
 [data-testid="stChatMessage"] h5,
 [data-testid="stChatMessage"] h6 {
     color: #29242c !important;
-}
-    font-family: 'Poppins', sans-serif !important;
-    font-size: 15px !important;
-    line-height: 1.6 !important;
-    margin: 0 !important;
 }
 
 /* Long messages */
