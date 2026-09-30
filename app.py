@@ -157,11 +157,13 @@ p, label, .stMarkdown {
 
 /* 🌸 USER MESSAGE — RIGHT */
 [data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]) {
-    justify-content: flex-end !important;
+    flex-direction: row-reverse !important;
+    justify-content: flex-start !important;
 }
 
 /* 🪻 AGENT MESSAGE — LEFT */
 [data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarAssistant"]) {
+    flex-direction: row !important;
     justify-content: flex-start !important;
 }
 
