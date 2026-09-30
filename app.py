@@ -145,7 +145,7 @@ p, label, .stMarkdown {
 
 /* 🌸 Modern Sakura Messaging Interface */
 
-/* Base message row */
+/* Message row */
 [data-testid="stChatMessage"] {
     width: 100% !important;
     display: flex !important;
@@ -155,45 +155,86 @@ p, label, .stMarkdown {
     border: none !important;
 }
 
-/* 🌸 USER — move entire row to the RIGHT */
+/* 🌸 USER MESSAGE — RIGHT */
 [data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]) {
-    flex-direction: row-reverse !important;
-    justify-content: flex-start !important;
+    justify-content: flex-end !important;
 }
 
-/* 🪻 AGENT — keep entire row on the LEFT */
+/* 🪻 AGENT MESSAGE — LEFT */
 [data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarAssistant"]) {
-    flex-direction: row !important;
     justify-content: flex-start !important;
 }
 
-/* Message content */
+/* Message bubble */
 [data-testid="stChatMessage"] > div:last-child {
     max-width: 72% !important;
     padding: 13px 17px !important;
     box-sizing: border-box !important;
     overflow-wrap: anywhere !important;
     word-break: normal !important;
+    border-radius: 20px !important;
 }
 
-/* 🌸 USER bubble */
+/* 🌸 USER BUBBLE */
 [data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]) > div:last-child {
     background: #f7dce9 !important;
     border: 1px solid #e8bfd1 !important;
     border-radius: 20px 20px 5px 20px !important;
-    color: #403744 !important;
+    margin-left: auto !important;
+    margin-right: 0 !important;
 }
 
-/* 🪻 AGENT bubble *//* Code blocks */
-[data-testid="stChatMessage"] pre {
-    white-space: pre-wrap !important;
-    overflow-x: auto !important;
-}
+/* 🪻 AGENT BUBBLE */
 [data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarAssistant"]) > div:last-child {
     background: #e9e1f0 !important;
     border: 1px solid #d4c5df !important;
     border-radius: 20px 20px 20px 5px !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+}
+
+/* Message text */
+[data-testid="stChatMessage"] p,
+[data-testid="stChatMessage"] span,
+[data-testid="stChatMessage"] li,
+[data-testid="stChatMessage"] strong,
+[data-testid="stChatMessage"] em {
     color: #29242c !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+}
+
+/* Message headings */
+[data-testid="stChatMessage"] h1,
+[data-testid="stChatMessage"] h2,
+[data-testid="stChatMessage"] h3,
+[data-testid="stChatMessage"] h4,
+[data-testid="stChatMessage"] h5,
+[data-testid="stChatMessage"] h6 {
+    color: #29242c !important;
+}
+
+/* Code blocks */
+[data-testid="stChatMessage"] pre {
+    background: #f5f2f7 !important;
+    color: #29242c !important;
+    white-space: pre-wrap !important;
+    overflow-x: auto !important;
+    border: 1px solid #d8cfe0 !important;
+    border-radius: 10px !important;
+    padding: 12px !important;
+}
+
+[data-testid="stChatMessage"] pre code {
+    background: transparent !important;
+    color: #29242c !important;
+}
+
+/* Prevent long messages from overflowing */
+[data-testid="stChatMessage"] * {
+    max-width: 100% !important;
+    overflow-wrap: anywhere !important;
 }
 
 /* Message text */
