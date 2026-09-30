@@ -193,8 +193,20 @@ p, label, .stMarkdown {
 }
 
 /* Message text */
-[data-testid="stChatMessage"] p {
-    color: inherit !important;
+[data-testid="stChatMessage"] p,
+[data-testid="stChatMessage"] span,
+[data-testid="stChatMessage"] li,
+[data-testid="stChatMessage"] strong,
+[data-testid="stChatMessage"] em {
+    color: #29242c !important;
+[data-testid="stChatMessage"] h1,
+[data-testid="stChatMessage"] h2,
+[data-testid="stChatMessage"] h3,
+[data-testid="stChatMessage"] h4,
+[data-testid="stChatMessage"] h5,
+[data-testid="stChatMessage"] h6 {
+    color: #29242c !important;
+}
     font-family: 'Poppins', sans-serif !important;
     font-size: 15px !important;
     line-height: 1.6 !important;
