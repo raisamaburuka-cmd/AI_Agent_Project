@@ -184,7 +184,11 @@ p, label, .stMarkdown {
     color: #403744 !important;
 }
 
-/* 🪻 AGENT bubble */
+/* 🪻 AGENT bubble *//* Code blocks */
+[data-testid="stChatMessage"] pre {
+    white-space: pre-wrap !important;
+    overflow-x: auto !important;
+}
 [data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarAssistant"]) > div:last-child {
     background: #e9e1f0 !important;
     border: 1px solid #d4c5df !important;
@@ -223,8 +227,19 @@ p, label, .stMarkdown {
 
 /* Code blocks */
 [data-testid="stChatMessage"] pre {
+    background: #f5f2f7 !important;
+    color: #29242c !important;
     white-space: pre-wrap !important;
     overflow-x: auto !important;
+    border: 1px solid #d8cfe0 !important;
+    border-radius: 10px !important;
+    padding: 12px !important;
+}
+
+/* Code text */
+[data-testid="stChatMessage"] pre code {
+    background: transparent !important;
+    color: #29242c !important;
 }
 /* 🌸 User message — RIGHT side */
 [data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]) {
