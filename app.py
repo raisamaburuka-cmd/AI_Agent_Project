@@ -175,7 +175,7 @@ p, label, .stMarkdown {
     border-radius: 20px !important;
 }
 
-/* 🌸 USER BUBBLE */
+/* User bubble */
 [data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]) > div:last-child {
     background: #f7dce9 !important;
     border: 1px solid #e8bfd1 !important;
@@ -184,7 +184,7 @@ p, label, .stMarkdown {
     margin-right: 0 !important;
 }
 
-/* 🪻 AGENT BUBBLE */
+/* Agent bubble */
 [data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarAssistant"]) > div:last-child {
     background: #e9e1f0 !important;
     border: 1px solid #d4c5df !important;
@@ -192,7 +192,6 @@ p, label, .stMarkdown {
     margin-left: 0 !important;
     margin-right: auto !important;
 }
-
 /* Message text */
 [data-testid="stChatMessage"] p,
 [data-testid="stChatMessage"] span,
