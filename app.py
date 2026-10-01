@@ -149,198 +149,114 @@ p, label, .stMarkdown {
 [data-testid="stChatMessage"] {
     width: 100% !important;
     display: flex !important;
+    align-items: flex-start !important;
     margin-bottom: 14px !important;
     padding: 0 !important;
     background: transparent !important;
     border: none !important;
-}
-
-/* 🌸 USER MESSAGE — RIGHT */
-[data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]) {
-    flex-direction: row-reverse !important;
-    justify-content: flex-start !important;
-}
-
-/* 🪻 AGENT MESSAGE — LEFT */
-[data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarAssistant"]) {
-    flex-direction: row !important;
-    justify-content: flex-start !important;
-}
-
-/* Message bubble */
-[data-testid="stChatMessage"] > div:last-child {
-    max-width: 72% !important;
-    padding: 13px 17px !important;
     box-sizing: border-box !important;
-    overflow-wrap: anywhere !important;
-    word-break: normal !important;
-    border-radius: 20px !important;
 }
 
-/* User bubble */
-[data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]) > div:last-child {
-    background: #f7dce9 !important;
-    border: 1px solid #e8bfd1 !important;
-    border-radius: 20px 20px 5px 20px !important;
-    margin-left: auto !important;
+/* 🌸 USER — RIGHT */
+[data-testid="stChatMessage"]:has([aria-label="Chat message from user"]) {
+    justify-content: flex-end !important;
+    flex-direction: row-reverse !important;
+}
+
+/* 🪻 AGENT — LEFT */
+[data-testid="stChatMessage"]:has([aria-label="Chat message from assistant"]) {
+    justify-content: flex-start !important;
+    flex-direction: row !important;
+}
+
+/* 🌸 Keep user bubble at the right */
+[data-testid="stChatMessage"]:has([aria-label="Chat message from user"])
+> [data-testid="stChatMessageContent"] {
+    margin-left: 0 !important;
     margin-right: 0 !important;
 }
 
-/* Agent bubble */
-[data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarAssistant"]) > div:last-child {
-    background: #e9e1f0 !important;
-    border: 1px solid #d4c5df !important;
-    border-radius: 20px 20px 20px 5px !important;
+/* 🪻 Keep agent bubble at the left */
+[data-testid="stChatMessage"]:has([aria-label="Chat message from assistant"])
+> [data-testid="stChatMessageContent"] {
     margin-left: 0 !important;
-    margin-right: auto !important;
-}
-/* Message text */
-[data-testid="stChatMessage"] p,
-[data-testid="stChatMessage"] span,
-[data-testid="stChatMessage"] li,
-[data-testid="stChatMessage"] strong,
-[data-testid="stChatMessage"] em {
-    color: #29242c !important;
-    font-family: 'Poppins', sans-serif !important;
-    font-size: 15px !important;
-    line-height: 1.6 !important;
+    margin-right: 0 !important;
 }
 
-/* Message headings */
-[data-testid="stChatMessage"] h1,
-[data-testid="stChatMessage"] h2,
-[data-testid="stChatMessage"] h3,
-[data-testid="stChatMessage"] h4,
-[data-testid="stChatMessage"] h5,
-[data-testid="stChatMessage"] h6 {
-    color: #29242c !important;
-}
-
-/* Code blocks */
-[data-testid="stChatMessage"] pre {
-    background: #f5f2f7 !important;
-    color: #29242c !important;
-    white-space: pre-wrap !important;
-    overflow-x: auto !important;
-    border: 1px solid #d8cfe0 !important;
-    border-radius: 10px !important;
-    padding: 12px !important;
-}
-
-[data-testid="stChatMessage"] pre code {
-    background: transparent !important;
-    color: #29242c !important;
-}
-
-/* Prevent long messages from overflowing */
-[data-testid="stChatMessage"] * {
-    max-width: 100% !important;
-    overflow-wrap: anywhere !important;
-}
-
-/* Message text */
-[data-testid="stChatMessage"] p,
-[data-testid="stChatMessage"] span,
-[data-testid="stChatMessage"] li,
-[data-testid="stChatMessage"] strong,
-[data-testid="stChatMessage"] em {
-    color: #29242c !important;
-    font-family: 'Poppins', sans-serif !important;
-    font-size: 15px !important;
-    line-height: 1.6 !important;
-    margin: 0 !important;
-}
-
-/* Message headings */
-[data-testid="stChatMessage"] h1,
-[data-testid="stChatMessage"] h2,
-[data-testid="stChatMessage"] h3,
-[data-testid="stChatMessage"] h4,
-[data-testid="stChatMessage"] h5,
-[data-testid="stChatMessage"] h6 {
-    color: #29242c !important;
-}
-
-/* Long messages */
-[data-testid="stChatMessage"] * {
-    max-width: 100% !important;
-    overflow-wrap: anywhere !important;
-}
-
-/* Code blocks */
-[data-testid="stChatMessage"] pre {
-    background: #f5f2f7 !important;
-    color: #29242c !important;
-    white-space: pre-wrap !important;
-    overflow-x: auto !important;
-    border: 1px solid #d8cfe0 !important;
-    border-radius: 10px !important;
-    padding: 12px !important;
-}
-
-/* Code text */
-[data-testid="stChatMessage"] pre code {
-    background: transparent !important;
-    color: #29242c !important;
-}
-/* 🌸 User message — RIGHT side */
-[data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]) {
-    justify-content: flex-end !important;
-}
-
-/* 🪻 AI message — LEFT side */
-[data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarAssistant"]) {
-    justify-content: flex-start !important;
-}
-
-/* Message content area */
-[data-testid="stChatMessage"] > div:last-child {
+/* Actual message bubble */
+[data-testid="stChatMessageContent"] {
+    width: fit-content !important;
     max-width: 72% !important;
+    flex: 0 1 auto !important;
+    /* Keep bubbles compact */
+    [data-testid="stChatMessageContent"] > div {
+    width: fit-content !important;
+    max-width: 100% !important;
+}
     padding: 13px 17px !important;
-    border-radius: 20px !important;
     box-sizing: border-box !important;
     overflow-wrap: anywhere !important;
     word-break: normal !important;
 }
 
-/* 🌸 User bubble */
-[data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]) > div:last-child {
+/* 🌸 USER BUBBLE */
+[data-testid="stChatMessage"]:has([aria-label="Chat message from user"])
+[data-testid="stChatMessageContent"] {
     background: #f7dce9 !important;
     border: 1px solid #e8bfd1 !important;
     border-radius: 20px 20px 5px 20px !important;
-    margin-left: auto !important;
-    color: #493b43 !important;
 }
 
-/* 🪻 AI Agent bubble */
-[data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarAssistant"]) > div:last-child {
+/* 🪻 AGENT BUBBLE */
+[data-testid="stChatMessage"]:has([aria-label="Chat message from assistant"])
+[data-testid="stChatMessageContent"] {
     background: #e9e1f0 !important;
     border: 1px solid #d4c5df !important;
     border-radius: 20px 20px 20px 5px !important;
-    margin-right: auto !important;
-    color: #403744 !important;
 }
 
 /* Message text */
-[data-testid="stChatMessage"] p {
-    color: inherit !important;
+[data-testid="stChatMessage"] p,
+[data-testid="stChatMessage"] span,
+[data-testid="stChatMessage"] li,
+[data-testid="stChatMessage"] strong,
+[data-testid="stChatMessage"] em {
+    color: #29242c !important;
     font-family: 'Poppins', sans-serif !important;
     font-size: 15px !important;
     line-height: 1.6 !important;
     margin: 0 !important;
 }
 
-/* Prevent long content from overflowing */
-[data-testid="stChatMessage"] * {
-    max-width: 100% !important;
+/* Message headings */
+[data-testid="stChatMessage"] h1,
+[data-testid="stChatMessage"] h2,
+[data-testid="stChatMessage"] h3,
+[data-testid="stChatMessage"] h4,
+[data-testid="stChatMessage"] h5,
+[data-testid="stChatMessage"] h6 {
+    color: #29242c !important;
+}
+
+/* Prevent text overflow */
+[data-testid="stChatMessage"] p,
+[data-testid="stChatMessage"] li,
+[data-testid="stChatMessage"] code {
     overflow-wrap: anywhere !important;
 }
 
-/* Keep code blocks readable */
+/* Code blocks */
 [data-testid="stChatMessage"] pre {
+    background: #f5f2f7 !important;
+    color: #29242c !important;
     white-space: pre-wrap !important;
     overflow-x: auto !important;
+    border: 1px solid #d8cfe0 !important;
+    border-radius: 10px !important;
+    padding: 12px !important;
 }
+
+
 /* Text input */
 .stChatInput {
     border-radius: 18px;
@@ -457,116 +373,61 @@ p, label, .stMarkdown {
     background: #f3e8f0 !important;
 }
 
-/* 🌸 Sakura microphone input */
-[data-testid="stAudioInput"] {
-    background: #fff7fb !important;
-    border: 1px solid #e7bfd3 !important;
-    border-radius: 18px !important;
-    padding: 10px !important;
-    box-shadow: 0 3px 12px rgba(180, 130, 155, 0.08) !important;
-}
 
-/* 🌸 Sakura microphone button */
+
+/* 🌸 Sakura microphone */
 
 [data-testid="stAudioInput"] {
+    position: fixed !important;
+    bottom: 58px !important;
+    left: calc(50% + 250px) !important;
+    z-index: 999 !important;
+    width: 46px !important;
+    height: 46px !important;
     background: transparent !important;
     border: none !important;
     padding: 0 !important;
+    margin: 0 !important;
     box-shadow: none !important;
 }
 
-/* Microphone control */
 [data-testid="stAudioInput"] > div {
+    width: 46px !important;
+    height: 46px !important;
+    min-width: 46px !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+}
+
+[data-testid="stAudioInput"] button {
+    width: 46px !important;
+    height: 46px !important;
+    min-width: 46px !important;
+    border-radius: 14px !important;
     background: #f4d7e5 !important;
     border: 1px solid #e7bfd3 !important;
-    border-radius: 16px !important;
-    padding: 0 !important;
-    width: 52px !important;
-    height: 52px !important;
-    min-width: 52px !important;
-    box-shadow: 0 3px 10px rgba(180, 130, 155, 0.12) !important;
-}
-
-/* Microphone button */
-[data-testid="stAudioInput"] button {
-    width: 52px !important;
-    height: 52px !important;
-    border-radius: 16px !important;
-    background: #f4d7e5 !important;
-    border: none !important;
     color: #8f5f78 !important;
     padding: 0 !important;
+    box-shadow: 0 3px 10px rgba(180, 130, 155, 0.15) !important;
 }
 
-/* Hover */
 [data-testid="stAudioInput"] button:hover {
     background: #edc5d8 !important;
-    border-color: #d8a9c1 !important;
 }
 
-/* Recording state */
 [data-testid="stAudioInput"] button:active {
     background: #e5b8cf !important;
 }
 
-[data-testid="stAudioInput"] > div {
-    background: #fff7fb !important;
-    border-radius: 18px !important;
-}
-
-[data-testid="stAudioInput"] button {
-    background: #f4d7e5 !important;
-    color: #8f5f78 !important;
-    border: 1px solid #e7bfd3 !important;
-    border-radius: 12px !important;
-}
-
-[data-testid="stAudioInput"] button:hover {
-    background: #edc5d8 !important;
-}
-
-/* 🌸 Recording timer */
-[data-testid="stAudioInput"] [data-testid="stAudioInputTime"] {
-    color: #8f5f78 !important;
-    background: #fff7fb !important;
-}
-
-[data-testid="stAudioInput"] [role="timer"] {
-    color: #8f5f78 !important;
-    background: #fff7fb !important;
-}
-
-[data-testid="stAudioInput"] time {
-    color: #8f5f78 !important;
-    background: #fff7fb !important;
-}
-
-/* 🌸 Audio player */
-audio {
-    border-radius: 12px;
-}
-
-[data-testid="stAudioInput"] button:hover {
-    background: #edc5d8 !important;
-}
-
-/* 🌸 Sakura recording timer */
+[data-testid="stAudioInput"] [data-testid="stAudioInputTime"],
+[data-testid="stAudioInput"] [role="timer"],
+[data-testid="stAudioInput"] time,
 [data-testid="stAudioInputWaveformTimeCode"] {
     color: #8f5f78 !important;
     background: #fff7fb !important;
     font-family: 'Poppins', sans-serif !important;
-    font-weight: 500 !important;
 }
-
-/* 🌸 FINAL CHAT ALIGNMENT */
-
-/* User message */
-[data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]) {
-    margin-left: auto !important;
-    margin-right: 0 !important;
-    width: 100% !important;
-}
-
 /* User bubble content */
 [data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]) > div:last-child {
     margin-left: auto !important;
@@ -625,18 +486,6 @@ audio {
     border-radius: 12px;
 }
 
-/* 🌸 Position microphone beside the chat input */
-[data-testid="stAudioInput"] {
-    position: fixed !important;
-    left: calc(50% + 125px) !important;
-    bottom: 58px !important;
-    z-index: 999 !important;
-    background: transparent !important;
-    border: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    box-shadow: none !important;
-}
 
 /* 🌸 Microphone button */
 [data-testid="stAudioInput"] button {
